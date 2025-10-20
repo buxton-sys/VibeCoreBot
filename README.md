@@ -72,58 +72,7 @@ This repo includes everything needed to run locally or on a VPS.
 
 ---
 
-## Pros & Cons — raw truth (no fluff)
-### Pros
-- Viral-ready: mini-games + polls = high engagement.
-- Privacy-aware: vault entries stay server-side and backups are opt-in.
-- Extensible: modular files — add more games or data sources easily.
-- Low-cost infra: node process + small JSON file + optional Drive = cheap host.
-- Simple dashboard: shareable links for quick social flex.
 
-### Cons
-- Single-file JSON DB (`lowdb`) is fine for prototypes, but not for scale or concurrency.
-- WhatsApp via `whatsapp-web.js` relies on a phone session — it’s fragile compared to WhatsApp Business API.
-- Audd & Spotify limits: rate limits and accuracy can bite; may need paid tiers.
-- Google Drive via service account requires careful permission setup; not plug-and-play for non-devs.
-- Running bot + dashboard in two processes needs caution for db.json races (use a proper DB in prod).
 
----
 
-## Next-level (what to improve when ready)
-- Replace lowdb with Postgres or Firebase for concurrency.
-- Use WhatsApp Business API (if you can get access) for a production-grade bot and higher reliability.
-- Add scheduled messages, broadcast templates, analytics, and webhooks for web dashboard interactivity.
-- Add M-Pesa / mobile money integrations for paid premium features (use official APIs and comply with regulations).
 
----
-
-## Monetization ideas (straight up)
-- **Freemium**: basic games + small polls free. Paid tier unlocks private custom branding, bigger polls, analytics, scheduled campaigns.
-- **Paid templates**: party/event linkups, wedding RSVPs, event check-ins — sell templates.
-- **Branded bots**: white-label bot for SMEs (bars, clubs, small artists) with M-Pesa integration for ticketing.
-- **Micro-transactions**: charge for “boosted polls” that pin poll in dashboard and share to a group of subscribers.
-- **SaaS hosting**: host VibeCore for local communities — subscription per WhatsApp session.
-
----
-
-## Security & Privacy notes
-- Do not attempt to bypass view-once or read receipts: we respect privacy and Terms of Service.
-- Vault data is stored on your server. Anyone with server access can read it — treat server as sensitive.
-- For production, enable disk encryption, HTTPS, and a proper DB with auth.
-- Keep your Spotify & Audd API keys secret.
-
----
-
-## Final remarks
-This is a complete, minimum-viable VibeCore. It’s intentionally **simple** so you can iterate fast. Want me to:
-- Swap `lowdb` to Postgres and show Docker + setup?
-- Add a payment endpoint (M-Pesa) for monetization ideas?
-- Add a prettier dashboard with charts and a login?
-
-Say which one and I’ll code it up next.
-
----
-
-If you want, I can paste the install steps again or give you a one-liner to provision on a cheap VPS (Ubuntu) + PM2. But for now: go run `npm install`, set your `.env`, `npm run start` and start vibing. 🎧✨
-
-Peace — raw truth served.
